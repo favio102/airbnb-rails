@@ -28,7 +28,9 @@
           <span class="sr-only">Open menu</span>
           <!--
             Icon when menu is closed.
+
             Heroicon name: outline/menu
+
             Menu open: "hidden", Menu closed: "block"
           -->
           <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
@@ -132,4 +134,4 @@
     </div>
   </nav>
 </header>
-<%= render "/shared/modal"%>
+<%= render "shared/modal", modal_trigger_id: "user-auth-modal-trigger", modal_content: "home/user_auth_form", content_params: nil %>
