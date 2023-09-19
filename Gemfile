@@ -5,6 +5,7 @@ ruby '3.1.2'
 
 gem 'bootsnap', require: false
 gem 'devise'
+gem 'geocoder'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'pg', '~> 1.1'
@@ -13,6 +14,7 @@ gem 'rails', '~> 7.0.8'
 gem 'sassc-rails'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
+gem "table_print"
 gem 'tailwindcss-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[ mingw mswin x64_mingw jruby ]

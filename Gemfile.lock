@@ -100,6 +100,7 @@ GEM
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
     ffi (1.15.5)
+    geocoder (1.8.2)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
@@ -227,6 +228,7 @@ GEM
     stimulus-rails (1.2.2)
       railties (>= 6.0.0)
     stringio (3.0.8)
+    table_print (1.5.7)
     tailwindcss-rails (2.0.30-arm64-darwin)
       railties (>= 6.0.0)
     thor (1.2.2)
@@ -259,6 +261,7 @@ DEPENDENCIES
   devise
   factory_bot_rails
   faker!
+  geocoder
   importmap-rails
   jbuilder
   pg (~> 1.1)
@@ -270,6 +273,7 @@ DEPENDENCIES
   shoulda-matchers (~> 5.0)
   sprockets-rails
   stimulus-rails
+  table_print
   tailwindcss-rails
   turbo-rails
   tzinfo-data
