@@ -22,3 +22,11 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+<!--
+gem geocoder for latitude and longitude
+
+
+bin/importmap pin geolib (for calculate distance user location and geolocation)
+2.
+ -->
