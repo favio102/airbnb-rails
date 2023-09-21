@@ -7,6 +7,8 @@ class Property < ApplicationRecord
   validates :country, presence: true
   validates :address_1, presence: true
   geocoded_by :address
+  monetize :price_cents, allow_nil: true
+
   after_validation :geocode, if: -> { latitude.blank? && longitude.blank? }
 
   def address
