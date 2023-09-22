@@ -1,10 +1,13 @@
-# Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
   devise_for :users
-
+  # Defines the root path route ("/")
   root "home#index"
 
   namespace :api do
-    get "/users_by_email/:email" => "users_by_emails#show", as: :users_by_email
+    get "/users_by_email" => "users_by_emails#show", as: :users_by_email
+    resources :favorites, only: [:create, :destroy]
   end
+
+  resources :properties, only: :show
+
 end

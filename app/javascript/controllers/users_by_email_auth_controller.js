@@ -5,6 +5,7 @@ export default class extends Controller {
   static targets = ['email', 'emailWrapper', 'invalidSvg', 'errorMessage', 'submit'];
 
   connect() {
+    console.log("connected");
     this.submitTarget.addEventListener('click', (e) => {
       e.preventDefault();
 
