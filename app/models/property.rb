@@ -42,4 +42,8 @@ class Property < ApplicationRecord
 
     Date.tomorrow.strftime(date_format)..next_reservation.reservation_date.strftime(date_format)
   end
+  
+  def average_rating
+    reviews.average(:rating)
+  end
 end
