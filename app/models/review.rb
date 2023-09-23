@@ -9,7 +9,7 @@ class Review < ApplicationRecord
   # Because each property could have a lot of reviews, we don't want to calculate the average_rating over
   # all records in a single query each time we need. So, to avoid this problem, we will update each avg
   # rating after :create and :update each review
-  after_commit :update_average_rating, on: [:create, :update]
+  after_commit :update_average_rating, on: [ :create, :update ]
 
   def update_average_rating
     reviewable.update!(average_rating: reviewable.reviews.average(:rating))
