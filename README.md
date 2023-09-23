@@ -28,5 +28,9 @@ gem geocoder for latitude and longitude
 
 
 bin/importmap pin geolib (for calculate distance user location and geolocation)
-2.
+
+to restart data base
+rails db:reset
+command to check all number of comments in rails console
+ Property.pluck(:reviews_count)
  -->

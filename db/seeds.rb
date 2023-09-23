@@ -6,7 +6,7 @@ puts "."
 puts "."
 puts "."
 puts "Creating Properties...."
-10.times do |i|
+11.times do |i|
   property = Property.create!(
     name: Faker::Lorem.unique.word,
     headline: Faker::Lorem.unique.sentence,
@@ -22,11 +22,11 @@ puts "Creating Properties...."
   property.images.attach(io: File.open(Rails.root.join("db","sample","images","home_#{i + 1}.jpg")), filename: property.name)
   puts "Images created!"
 
-  # puts "Creating reviews ...."
-  # (1..5).to_a.sample.times do
-  #   Review.create(reviewable: property, rating: (1..5).to_a.sample, title: Faker::Lorem.word, body: Faker::Lorem.paragraph)
-  # end
-  # puts "Reviews created!!!"
+  puts "Creating reviews ...."
+  (1..5).to_a.sample.times do
+    Review.create(reviewable: property, rating: (1..5).to_a.sample, title: Faker::Lorem.word, body: Faker::Lorem.paragraph)
+  end
+  puts "Reviews created!!!"
   puts "."
   puts "."
   puts "."
