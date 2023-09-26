@@ -1,4 +1,7 @@
 class Property < ApplicationRecord
+  CLEANING_FEE = 5_000.freeze
+  CLEANING_FEE_MONEY = Money.new(CLEANING_FEE)
+
   validates :name, presence: true
   validates :headline, presence: true
   validates :description, presence: true
@@ -19,6 +22,7 @@ class Property < ApplicationRecord
   has_many :favorited_users, through: :favorites, source: :user
   has_many :reservations, dependent: :destroy
   has_many :reserved_users, through: :reservations, source: :user
+
 
   def address
     # [address_1, address_2, city, state, country].compact.join(', ')
