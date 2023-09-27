@@ -13,3 +13,4 @@ pin "#lib/adapters/http.js", to: "https://ga.jspm.io/npm:axios@0.27.2/lib/adapte
 pin "#lib/defaults/env/FormData.js", to: "https://ga.jspm.io/npm:axios@0.27.2/lib/helpers/null.js"
 pin "buffer", to: "https://ga.jspm.io/npm:@jspm/core@2.0.0-beta.26/nodelibs/browser/buffer.js"
 pin "vanillajs-datepicker", to: "https://ga.jspm.io/npm:vanillajs-datepicker@1.3.4/js/main.js"
+pin "sweetalert2", to: "https://ga.jspm.io/npm:sweetalert2@11.7.31/dist/sweetalert2.all.js"
