@@ -2,18 +2,30 @@ import { Controller } from "@hotwired/stimulus"
 import { Datepicker } from 'vanillajs-datepicker';
 
 export default class extends Controller {
-  static targets = [ 'checkin', 'checkout']
+  static targets = [ 'checkin', 'checkout'];
   connect() {
+    // console.log("checkin", this.element.dataset.defaultCheckinDate);
+    // console.log("checkout", this.element.dataset.defaultCheckoutDate);
     const checkinPicker = new Datepicker(this.checkinTarget, {
-      minDate: '9/12/2023'
+      minDate: this.element.dataset.defaultCheckinDate
     });
-    checkinPicker.setOptions({
-      minDate: '10/12/2023'
+    const checkoutPicker = new Datepicker(this.checkoutTarget, {
+      minDate: this.element.dataset.defaultCheckoutDate
     });
-    checkinPicker.setOptions({
-      minDate: '11/12/2023'
-    })
-    new Datepicker(this.checkinTarget);
-    new Datepicker(this.checkoutTarget);
+
+    this.checkinTarget.addEventListener('changeDate', (e) => {
+      const date = new Date(e.target.value);
+      date.setDate(date.getDate() + 1);
+      checkoutPicker.setOptions({
+        minDate: date
+      });
+    });
+    this.checkoutTarget.addEventListener('changeDate', (e) => {
+      const date = new Date(e.target.value);
+      date.setDate(date.getDate() - 1);
+      checkinPicker.setOptions({
+        maxDate: date
+      });
+    });
   }
 }

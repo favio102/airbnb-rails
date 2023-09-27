@@ -4,7 +4,11 @@
     <h1 class="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">Entire rental unit hosted by Fliphaus</h1>
   </div>
   <!-- Reservation component -->
-  <div class="mt-4 lg:mt-0 lg:row-span-3" data-controller="reservation-component">
+  <div class="mt-4 lg:mt-0 lg:row-span-3"
+    data-controller="reservation-component"
+    data-default-checkin-date="<%= Date.tomorrow.to_formatted_s(:us_short_date) %>"
+    data-default-checkout-date="<%= (Date.tomorrow + 1).to_formatted_s(:us_short_date) %>"
+  >
     <div class="mt-10 lg:mt-0">
       <h2 class="text-2xl font-medium text-gray-900"> <%= humanized_money_with_symbol(@property.price) %> per night</h2>
       <div class="isolate -space-y-px rounded-md shadow-sm mt-6">
