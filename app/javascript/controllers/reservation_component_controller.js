@@ -89,7 +89,7 @@ export default class extends Controller {
 
   submitReservationComponent(e) {
     if (isEmpty(this.checkinTarget.value) || isEmpty(this.checkoutTarget.value)){
-      Swal.fire({text: "Fill check in and checkout properly.", icon: "error"});
+      Swal.fire({text: "Select for check-in and check-out dates.", icon: "error"});
       return;
     }
     Turbo.visit(this.buildSubmitUrl(e.target.dataset.submitUrl));

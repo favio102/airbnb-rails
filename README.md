@@ -33,6 +33,10 @@ to restart data base
 rails db:reset
 command to check all number of comments in rails console
  Property.pluck(:reviews_count)
- datepicker
+ datepicker to work with reservations (checkin and checkout)
  https://mymth.github.io/vanillajs-datepicker/#/
+
+alerts
+ https://sweetalert2.github.io/
+
  -->
