@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_one_attached :picture
   has_many :favorites, dependent: :destroy
   has_many :favorited_properties, through: :favorites, source: :property
+  has_many :payments, through: :reservations
   has_many :reservations, dependent: :destroy
   has_many :reserved_properties, through: :reservations, source: :property
   has_many :reviews, dependent: :destroy
