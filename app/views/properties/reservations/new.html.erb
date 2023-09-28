@@ -6,8 +6,9 @@
       <div class="mt-10 lg:mt-0">
         <!-- Payment -->
         <h2 class="text-lg font-medium text-gray-900">Payment</h2>
-
-
+        <%# <%= stripe_elements_tag(submit_path:property_path(@property))  %> %>
+        <%# <%= stripe_javascript_tag %> %>
+<%# <%= stripe_elements_tag submit_path:property_path(@property) %> %>
           <%# stripe_elements_tag(
             submit_path: reservation_payments_path(
               property_id: @property.id,

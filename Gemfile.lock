@@ -93,6 +93,10 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.12.0)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
@@ -245,6 +249,7 @@ GEM
     stimulus-rails (1.2.2)
       railties (>= 6.0.0)
     stringio (3.0.8)
+    stripe (9.3.0)
     table_print (1.5.7)
     tailwindcss-rails (2.0.30-arm64-darwin)
       railties (>= 6.0.0)
@@ -276,6 +281,7 @@ DEPENDENCIES
   bootsnap
   debug
   devise
+  dotenv-rails
   factory_bot_rails
   faker!
   geocoder
@@ -293,6 +299,7 @@ DEPENDENCIES
   shoulda-matchers (~> 5.0)
   sprockets-rails
   stimulus-rails
+  stripe (~> 9.3)
   table_print
   tailwindcss-rails
   turbo-rails
