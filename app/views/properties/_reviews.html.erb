@@ -41,7 +41,9 @@
                   </div>
                 </div>
               </dt>
-              <dd class="ml-3 w-10 text-right tabular-nums text-sm text-gray-900"><%= rating_percent(property: @property, stars: n) %>%</dd>
+
+              <dd class="ml-3 w-10 text-right tabular-nums text-sm text-gray-900"><%= property_rating_percentage(property: @property, rating: n) %>%</dd>
+
             </div>
           <% end %>
         </dl>

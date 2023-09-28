@@ -33,8 +33,9 @@ module AirbnbRails
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-
-    # # stripe keys
+    # Assets pipeline
+    config.assets.enabled = true
+    # Stripe keys
     config.stripe.secret_key = ENV["STRIPE_SECRET_KEY"]
     config.stripe.publishable_key = ENV["STRIPE_PUBLISHABLE_KEY"]
   end
