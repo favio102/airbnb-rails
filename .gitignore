@@ -27,9 +27,11 @@
 
 /public/assets
 
+# Ignore .env file containing credentials.
+.env*
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
-/.env*
