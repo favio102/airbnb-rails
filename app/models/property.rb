@@ -49,9 +49,4 @@ class Property < ApplicationRecord
 
     next_reservation.checkout_date.strftime(date_format)..Date.today.end_of_year.strftime(date_format)
   end
-
-  def country_name
-    country = ISO3166::Country[country_code]
-    country&.name
-  end
 end
