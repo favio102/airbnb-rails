@@ -39,4 +39,5 @@ command to check all number of comments in rails console
 alerts
  https://sweetalert2.github.io/
 
+search with ack
  -->

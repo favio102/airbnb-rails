@@ -1,5 +1,7 @@
 # Frozen_string_literal = true
 class ReservationPaymentsController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     stripe_card = Stripe::Customer.create_source(
       stripe_customer.id,
@@ -25,6 +27,7 @@ class ReservationPaymentsController < ApplicationController
       total: Money.from_amount(BigDecimal(payment_params[:total])),
       stripe_id: charge.id
     )
+
     redirect_to root_path
   end
 
@@ -32,13 +35,16 @@ class ReservationPaymentsController < ApplicationController
 
   def payment_params
     params.permit(
-      :stripeToken, :property_id, :user_id, :checkin_date, :checkout_date, :subtotal, :cleaning_fee, :service_fee, :total
-    )
+      :stripeToken, :property_id, :user_id, :checkin_date, :checkout_date, :subtotal, :cleaning_fee, :service_fee, :total )
   end
 
   def user
     @user ||= User.find(payment_params[:user_id])
   end
+
+    def property
+      @property ||= Property.find(payment_params[:property_id])
+    end
 
   def stripe_customer
     @stripe_customer ||= if user.stripe_id.blank?

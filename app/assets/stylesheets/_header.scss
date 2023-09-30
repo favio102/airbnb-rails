@@ -5,15 +5,17 @@
 .logo-link {
   svg {
     display: block;
-    color: #eb4c60;
+    // color: $airbnb-logo;
   }
 }
 
 .invalid-inset-input-text-field {
   border-color: rgb(244, 63, 94) !important;
+
   label {
     color: rgb(244, 63, 94) !important;
   }
+
   input[type="email"], input[type="text"] {
     &:focus {
       border-color: rgb(244, 63, 94) !important;
