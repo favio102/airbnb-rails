@@ -4,6 +4,7 @@ git_source(:github) { |repo| 'https://github.com/#{repo}.git' }
 ruby '3.1.2'
 
 gem 'bootsnap', require: false
+gem 'country_select', '~> 8.0'
 gem 'devise'
 gem 'geocoder'
 gem 'image_processing', '~> 1.2' # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]

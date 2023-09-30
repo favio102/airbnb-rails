@@ -40,4 +40,7 @@ alerts
  https://sweetalert2.github.io/
 
 search with ack
+
+select country gem
+gem 'country_select', '~> 8.0'
  -->

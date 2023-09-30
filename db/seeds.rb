@@ -18,11 +18,13 @@ end
 puts 'User images created!'
 
 puts 'Creating users..........'
-me = User.create(email: "test@pe.me", first_name: "Jeremias", last_name: "Sprinfield", password: "wwweeerrr")
+me = User.create(email: "test@pe.me", password: "wwweeerrr")
+me.profile.update(first_name: "Jeremias", last_name: "Sprinfield")
 me.picture.attach(io: user_pictures[0], filename: "#{me.full_name}.jpg")
 
 5.times do |i|
-  user = User.create(email: Faker::Internet.email, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: "password")
+  user = User.create(email: Faker::Internet.email, password: "password")
+  user.profile.update(first_name: Faker::Name.first_name,  last_name: Faker::Name.last_name)
   user.picture.attach(io: user_pictures[i + 1], filename: "#{user.full_name}.jpg")
 end
 puts 'Users data created!'
@@ -36,7 +38,7 @@ puts 'Creating Properties....'
     address_1: Faker::Address.street_address,
     city: Faker::Address.city,
     state: Faker::Address.state,
-    country: 'United States',
+    country_code: 'US',
     price: Money.from_amount((25..100).to_a.sample)
   )
   puts 'Properties data created!!'

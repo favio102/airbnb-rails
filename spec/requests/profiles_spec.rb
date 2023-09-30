@@ -12,4 +12,18 @@ RSpec.describe "PRofiles", type: :request do
       expect(response).to be_successful
     end
   end
+
+  describe "Put update" do
+    it "succeeds" do
+      profile.update! first_name: "Doo", last_name: "Maa"
+
+        put profile_path(profile), params: {
+          profile: {
+            first_name: "Smith"
+          }
+        }
+      expect(profile.reload.first_name).to eq("Smith")
+      expect(response).to be_redirect
+    end
+  end
 end
