@@ -6,7 +6,7 @@ class PasswordsController < ApplicationController
   def show
     @user = User.find(params[:id])
     authorize @user, policy_class: PasswordPolicy
-
+  end
 
   def update
     @user = User.find(params[:id])
