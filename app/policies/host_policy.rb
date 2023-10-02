@@ -1,4 +1,4 @@
-class HostPolicy < ApplicationController
+class HostPolicy < ApplicationPolicy
   def index?
     user.host?
   end
@@ -10,7 +10,7 @@ class HostPolicy < ApplicationController
   def show?
     user.host?
   end
-
+ 
   def create?
     user.host?
   end

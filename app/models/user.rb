@@ -29,7 +29,7 @@ class User < ApplicationRecord
     role == "host"
   end
 
-  def host!
+  def hostify!
     update!(role: "host")
   end
 
