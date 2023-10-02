@@ -14,10 +14,26 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   after_create :create_profile
 
+  ROLES = %w[host]
+
+  validates :role, inclusion: { in: ROLES }, allow_nil: true
+
   def create_profile
     self.profile = Profile.new
     save!
   end
 
   delegate :full_name, to: :profile
+
+  def host?
+    role == "host"
+  end
+
+  def host!
+    update!(role: "host")
+  end
+
+  def customer?
+    role.blank?
+  end
 end
