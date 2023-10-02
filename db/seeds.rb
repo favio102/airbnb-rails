@@ -32,6 +32,7 @@ puts 'Users data created!'
 puts 'Creating Properties....'
 11.times do |i|
   property = Property.create!(
+    user: me,
     name: Faker::Lorem.unique.word,
     headline: Faker::Lorem.unique.sentence,
     description: Faker::Lorem.paragraphs(number: 30).join(' '),

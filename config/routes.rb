@@ -19,6 +19,6 @@ Rails.application.routes.draw do
   put "/hostify/:user_id" => "hostify#update", as: :hostify
   namespace :host do
     get "/dashboard" => "dashboard#index", as: :dashboard
-    resources :properties, only: :new 
+    resources :properties, only: [:new, :create]
   end
 end
