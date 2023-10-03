@@ -2,6 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Host::Properties", type: :request do
   let(:user) { create(:user, role: "host") }
+  let(:property) { create(:property, user: user) }
 
   before { sign_in user }
 
@@ -39,7 +40,7 @@ RSpec.describe "Host::Properties", type: :request do
         expect do
           post host_properties_path, params: {
             property: {
-              name: "new property name",
+              name: "new property name"
             }
           }
         end.not_to change { Property.count }

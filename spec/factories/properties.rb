@@ -8,7 +8,5 @@ FactoryBot.define do
     city { Faker::Address.city }
     state { Faker::Address.state }
     country_code { Faker::Address.country_code }
-    latitude { 1.5 }
-    longitude { 1.5 }
   end
 end
