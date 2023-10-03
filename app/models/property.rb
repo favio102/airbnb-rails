@@ -28,6 +28,8 @@ class Property < ApplicationRecord
   has_many :payments, through: :reservations
   has_many :reserved_users, through: :reservations, source: :user
 
+  scope :city, ->(city) { where("lower(city) like ?", "%#{city.downcase}%") }
+
   def address
     # [address_1, address_2, city, state, country_name].compact.join(', ')
     [state, country_name].compact.join(', ')
