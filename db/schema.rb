@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_02_124131) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_04_152144) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -123,8 +123,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_02_124131) do
     t.string "title"
     t.text "body"
     t.integer "rating"
-    t.bigint "reviewable_id"
-    t.string "reviewable_type"
+    t.string "reviewable_id", null: false
+    t.string "reviewable_type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false

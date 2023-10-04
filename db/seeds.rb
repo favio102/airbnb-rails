@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 puts 'Cleaning data base...................'
 Review.destroy_all
@@ -6,6 +8,7 @@ Reservation.destroy_all
 Property.destroy_all
 Profile.destroy_all
 Favorite.destroy_all
+Payment.destroy_all
 puts 'Database cleaned!!'
 
 puts 'Preparing data seeds..........'
