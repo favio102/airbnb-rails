@@ -6,7 +6,6 @@
       </svg>
       <span class="truncate"> Profile </span>
     <% end %>
-
     <%= link_to account_path(current_user), class: "text-gray-900 hover:text-gray-900 hover:bg-gray-50 group rounded-md px-3 py-2 flex items-center text-sm font-medium #{'active' if controller_name == "accounts"}" do %>
       <!-- Heroicon name: outline/cog -->
       <svg class="text-gray-400 group-hover:text-gray-500 flex-shrink-0 -ml-1 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
@@ -15,7 +14,6 @@
       </svg>
       <span class="truncate"> Account </span>
     <% end %>
-
     <%= link_to password_path(current_user), class: "text-gray-900 hover:text-gray-900 hover:bg-gray-50 group rounded-md px-3 py-2 flex items-center text-sm font-medium #{'active' if controller_name == "passwords"}" do %>
       <!-- Heroicon name: outline/key -->
       <svg class="text-gray-400 group-hover:text-gray-500 flex-shrink-0 -ml-1 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">

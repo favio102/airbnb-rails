@@ -1,4 +1,5 @@
-# Frozen_string_literal = true
+# frozen_string_literal: true
+
 class ReservationPaymentsController < ApplicationController
   before_action :authenticate_user!
 

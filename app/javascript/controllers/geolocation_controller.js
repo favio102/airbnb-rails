@@ -6,7 +6,6 @@ export default class extends Controller {
   static targets = ['property'];
 
   connect() {
-    // If the controller doesn't have the user's geolocation, it gets the browser's geolocation
     if (isEmpty(this.element.dataset.latitude) && isEmpty(this.element.dataset.longitude)) {
       window.navigator.geolocation.getCurrentPosition(
         (position) => {
@@ -29,8 +28,8 @@ export default class extends Controller {
 
   getUserCoordinates() {
     return {
-      latitude: parseFloat(this.element.dataset.latitude), // Parse as float to ensure numeric values
-      longitude: parseFloat(this.element.dataset.longitude), // Parse as float to ensure numeric values
+      latitude: parseFloat(this.element.dataset.latitude),
+      longitude: parseFloat(this.element.dataset.longitude),
     };
   }
 

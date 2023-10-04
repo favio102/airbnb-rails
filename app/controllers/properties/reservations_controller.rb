@@ -1,4 +1,5 @@
-#fronzen_string_literal: true
+# frozen_string_literal: true
+
 module Properties
   class ReservationsController < ApplicationController
     before_action :authenticate_user!

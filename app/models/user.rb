@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -5,7 +7,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :profile, dependent: :destroy
-
   has_many :favorites, dependent: :destroy
   has_many :favorited_properties, through: :favorites, source: :property
   has_many :reservations, dependent: :destroy
@@ -28,11 +29,11 @@ class User < ApplicationRecord
   delegate :full_name, to: :profile
 
   def host?
-    role == "host"
+    role == 'host'
   end
 
   def hostify!
-    update!(role: "host")
+    update!(role: 'host')
   end
 
   def customer?

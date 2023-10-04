@@ -14,7 +14,7 @@ module Api
     end
 
     def destroy
-      favorite = Favorite.find_by(favorite_params)
+      favorite = Favorite.find(params[:id])
       favorite.destroy!
 
       respond_to do |format|

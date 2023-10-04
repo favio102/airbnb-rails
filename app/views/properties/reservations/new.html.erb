@@ -1,12 +1,10 @@
 <div class="bg-gray-50" data-controller="stripe-elements">
   <div class="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
     <h2 class="sr-only">Checkout</h2>
-
     <div class="lg:grid lg:grid-cols-2 lg:gap-x-12 xl:gap-x-16">
       <div class="mt-10 lg:mt-0">
         <!-- Payment -->
         <h2 class="text-lg font-medium text-gray-900">Payment</h2>
-
         <%=
           stripe_elements_tag(
             submit_path: reservation_payments_path(
@@ -22,14 +20,11 @@
           )
         %>
       </div>
-
       <!-- Reservation Details -->
       <div class="mt-10 lg:mt-0">
         <h2 class="text-lg font-medium text-gray-900">Your Reservation</h2>
-
         <div class="mt-4 bg-white border border-gray-200 rounded-lg shadow-sm">
           <h3 class="sr-only">Items in your cart</h3>
-
           <dl class="border-t border-gray-200 py-6 px-4 space-y-6 sm:px-6">
             <div class="flex items-center justify-between">
               <dt class="text-sm">Check in</dt>
