@@ -1,0 +1,27 @@
+/* .nav-container */
+.nav-container {
+  min-height: 80px;
+}
+
+/* .logo-link */
+.logo-link svg {
+  display: block;
+  color: #eb4c60;
+}
+
+/* .invalid-inset-input-text-field */
+.invalid-inset-input-text-field {
+  border-color: rgb(244, 63, 94) !important;
+}
+
+.invalid-inset-input-text-field label {
+  color: rgb(244, 63, 94) !important;
+}
+
+.invalid-inset-input-text-field input[type="email"],
+.invalid-inset-input-text-field input[type="text"] {
+  &:focus {
+    border-color: rgb(244, 63, 94) !important;
+  }
+  color: rgb(244, 63, 94) !important;
+}
