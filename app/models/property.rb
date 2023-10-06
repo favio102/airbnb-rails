@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Property < ApplicationRecord
+  self.table_name = "air_bnb_properties"
   include Countriable
 
   CLEANING_FEE = 5_000.freeze

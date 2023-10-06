@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Profile < ApplicationRecord
+  self.table_name = "air_bnb_profiles"
   include Countriable
 
   belongs_to :user
