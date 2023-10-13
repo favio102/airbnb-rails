@@ -4,11 +4,8 @@ import { isEmpty } from 'lodash-es';
 import Swal from 'sweetalert2';
 
 export default class extends Controller {
-  static targets = [ 'checkin', 'checkout', 'numOfNights', 'nightlyTotal', 'serviceFee', 'total'];
+  static targets = [ 'checkin', 'checkout', 'numOfNights', 'nightlyTotal', 'serviceFee', 'total' ];
   connect() {
-    // console.log("checkin", this.element.dataset.defaultCheckinDate);
-    // console.log("checkout", this.element.dataset.defaultCheckoutDate);
-    // console.log(this.element.dataset.nightlyPrice);
     const checkinPicker = new Datepicker(this.checkinTarget, {
       minDate: this.element.dataset.defaultCheckinDate
     });
@@ -22,7 +19,6 @@ export default class extends Controller {
       checkoutPicker.setOptions({
         minDate: date
       });
-      // console.log(this.numberOfNights());
       this.updateNightlyTotal();
     });
     this.checkoutTarget.addEventListener('changeDate', (e) => {
@@ -31,7 +27,6 @@ export default class extends Controller {
       checkinPicker.setOptions({
         maxDate: date
       });
-      // console.log(this.numberOfNights());
       this.updateNightlyTotal();
     });
   }
@@ -76,7 +71,7 @@ export default class extends Controller {
       subtotal: this.calculateNightlyTotal(),
       cleaning_fee: this.element.dataset.cleaningFee,
       service_fee: this.calculateServiceFee(),
-      total: this.calculateTotal()
+      total: this.calculateTotal(),
     };
 
     const searchParams = new URLSearchParams(params);

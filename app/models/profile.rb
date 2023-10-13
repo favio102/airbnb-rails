@@ -1,14 +1,16 @@
+# frozen_string_literal: true
+
 class Profile < ApplicationRecord
+  self.table_name = "air_bnb_profiles"
   include Countriable
 
   belongs_to :user
   has_one_attached :picture
-
   geocoded_by :address
-  after_validation :geocode, if: -> { address.present? && latitude.blank? && longitude.blank? }
+  after_validation :geocode, if: -> { latitude.blank? && longitude.blank? }
 
   def address
-    [address_1, address_2, city, state, zip_code, country_name].compact.join(', ')
+    [state, country_name].compact.join(', ')
   end
 
   def full_name

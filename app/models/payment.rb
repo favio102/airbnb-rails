@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class Payment < ApplicationRecord
+  self.table_name = "air_bnb_payments"
   belongs_to :reservation
 
   monetize :subtotal_cents, allow_nil: true

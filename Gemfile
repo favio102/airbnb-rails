@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| 'https://github.com/#{repo}.git' }
 
 ruby '3.1.2'
-
 gem 'bootsnap', require: false
 gem 'country_select', '~> 8.0'
 gem 'devise'
@@ -16,7 +15,7 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'pundit'
 gem 'rails', '~> 7.0.8'
-gem 'sassc-rails'
+# gem 'sassc-rails'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'stripe-rails'

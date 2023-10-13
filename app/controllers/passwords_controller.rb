@@ -1,4 +1,4 @@
-# frozen_string_literal = true
+# frozen_string_literal: true
 
 class PasswordsController < ApplicationController
   before_action :authenticate_user!

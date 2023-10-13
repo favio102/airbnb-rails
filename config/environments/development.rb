@@ -6,10 +6,10 @@ Rails.application.configure do
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
+  config.cache_classes = false
+
   # Asset pipeline settings
   config.assets.debug = true
-  
-  config.cache_classes = false
 
   # Do not eager load code on boot.
   config.eager_load = false
@@ -54,7 +54,7 @@ Rails.application.configure do
   config.active_support.disallowed_deprecation_warnings = []
 
   # Raise an error on page load if there are pending migrations.
-  config.active_record.migration_error = :page_load
+  config.active_record.migration_error = false
 
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true

@@ -2,6 +2,7 @@
 
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
+
   def show
     @profile = Profile.find(params[:id])
     authorize @profile
@@ -17,6 +18,6 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :address_1, :address_2, :city, :zip_code, :country, :picture )
+    params.require(:profile).permit(:first_name, :last_name, :address_1, :address_2, :city, :zip_code, :country, :picture)
   end
 end

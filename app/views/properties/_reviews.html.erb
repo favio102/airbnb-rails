@@ -8,8 +8,7 @@
           <div class="flex items-center">
             <%
               property_star_classes = ["text-gray-300", "text-gray-300", "text-gray-300", "text-gray-300", "text-gray-300"]
-
-              @property.average_rating.round(0).times do |i|
+              (@property.average_rating.round(0)).times do |i|
                 property_star_classes[i] = "text-yellow-400"
               end
             %>
@@ -60,14 +59,8 @@
                 <div class="ml-4">
                   <h4 class="text-sm font-bold text-gray-900"><%= review.user.full_name %></h4>
                   <div class="mt-1 flex items-center">
-                    <!--
-                    Heroicon name: solid/star
-
-                    Active: "text-yellow-400", Default: "text-gray-300"
-                  -->
                     <%
                       review_star_classes = ["text-gray-300", "text-gray-300", "text-gray-300", "text-gray-300", "text-gray-300"]
-
                       review.rating.times do |i|
                         review_star_classes[i] = "text-yellow-400"
                       end
@@ -86,7 +79,6 @@
               </div>
             </div>
           <% end %>
-          <!-- More reviews... -->
         </div>
       </div>
     </div>

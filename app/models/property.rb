@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class Property < ApplicationRecord
+  self.table_name = "air_bnb_properties"
   include Countriable
 
   CLEANING_FEE = 5_000.freeze
@@ -12,14 +15,11 @@ class Property < ApplicationRecord
   validates :city, presence: true
   validates :state, presence: true
   validates :country_code, presence: true
-
   monetize :price_cents, allow_nil: true
-
   geocoded_by :address
   after_validation :geocode, if: -> { latitude.blank? && longitude.blank? }
-
+  belongs_to :user
   has_many_attached :images, dependent: :destroy
-
   has_many :reviews, as: :reviewable
   has_many :favorites, dependent: :destroy
   has_many :favorited_users, through: :favorites, source: :user
@@ -27,8 +27,13 @@ class Property < ApplicationRecord
   has_many :payments, through: :reservations
   has_many :reserved_users, through: :reservations, source: :user
 
+  scope :city, ->(city) { where("lower(city) like ?", "%#{city.downcase}%") }
+  scope :country_code, ->(country_code) { where("lower(country_code) like ?", "%#{country_code.downcase}%") }
+  scope :between_dates, ->(checkin, checkout) do
+    joins(:reservations).where.not('reservations.checkin_date < ?', Date.strptime(checkin, Date::DATE_FORMATS[:us_short_date])).where.not('reservations.checkout_date > ?', Date.strptime(checkout, Date::DATE_FORMATS[:us_short_date]))
+  end
+
   def address
-    # [address_1, address_2, city, state, country_name].compact.join(', ')
     [state, country_name].compact.join(', ')
   end
 
