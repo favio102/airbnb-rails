@@ -6,6 +6,7 @@ module Api
 
     def create
       favorite = Favorite.create!(favorite_params)
+
       respond_to do |format|
         format.json do
           render json: serialize_favorite(favorite), status: :created
@@ -14,7 +15,7 @@ module Api
     end
 
     def destroy
-      favorite = Favorite.find_by(favorite_params)
+      favorite = Favorite.find(params[:id])
       favorite.destroy!
 
       respond_to do |format|

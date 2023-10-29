@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :properties, dependent: :destroy
   after_create :create_profile
+  has_many :receiving_payments, through: :properties, source: :payments
 
   ROLES = %w[host]
 

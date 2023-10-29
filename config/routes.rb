@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :favorites, only: [:create, :destroy]
   end
 
+  get "/properties/search" => "properties/search#index"
+
   resources :properties, only: :show do
     resources :reservations, only: :new, controller: "properties/reservations"
   end
@@ -20,6 +22,6 @@ Rails.application.routes.draw do
   namespace :host do
     get "/dashboard" => "dashboard#index", as: :dashboard
     resources :properties, only: [:new, :create]
-
+    resources :payments, only: :index
   end
 end
