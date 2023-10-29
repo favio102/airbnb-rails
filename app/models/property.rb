@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Property < ApplicationRecord
   include Countriable
 
@@ -19,6 +20,7 @@ class Property < ApplicationRecord
   after_validation :geocode, if: -> { latitude.blank? && longitude.blank? }
 
   belongs_to :user
+
   has_many_attached :images, dependent: :destroy
 
   has_many :reviews, as: :reviewable
@@ -27,6 +29,14 @@ class Property < ApplicationRecord
   has_many :reservations, dependent: :destroy
   has_many :payments, through: :reservations
   has_many :reserved_users, through: :reservations, source: :user
+
+  scope :city, ->(city) { where("lower(city) like ?", "%#{city.downcase}%") }
+  scope :country_code, ->(country_code) { where("lower(country_code) like ?", "%#{country_code.downcase}%") }
+  scope :between_dates, -> (checkin, checkout) do
+    joins(:reservations).
+      where.not("reservations.checkin_date < ?", Date.strptime(checkin, Date::DATE_FORMATS[:us_short_date])).
+      where.not("reservations.checkout_date > ?", Date.strptime(checkout, Date::DATE_FORMATS[:us_short_date]))
+  end
 
   def address
     # [address_1, address_2, city, state, country_name].compact.join(', ')
