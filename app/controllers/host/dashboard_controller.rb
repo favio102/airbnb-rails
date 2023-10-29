@@ -5,7 +5,8 @@ module Host
     before_action :authenticate_user!
 
     def index
-      # authorize current_user, policy_class: HostPolicy
+      authorize current_user, policy_class: HostPolicy
+      @properties = current_user.properties
     end
   end
 end
