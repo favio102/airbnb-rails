@@ -1,12 +1,8 @@
-<div
-  class="bg-white"
-  data-controller="property"
->
+<div class="bg-white" data-controller="property">
   <div class="pt-6">
     <div class="max-w-2xl mx-auto px-4 flex items-center space-x-2 sm:px-6 lg:max-w-7xl lg:px-8 mb-2">
       <h1 class="font-semibold text-4xl"><%= @property.name %></h1>
     </div>
-
     <div class="max-w-2xl mx-auto px-4 flex justify-between items-center space-x-2 sm:px-6 lg:max-w-7xl lg:px-8">
       <div>
         <span>
@@ -18,7 +14,6 @@
         |
         <span><%= @property.city %>, <%= @property.state %> </span>
       </div>
-
       <div>
         <%= link_to "", data: { controller: "share", action: "share#share" }, class: "mr-4" do %>
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block relative" style="bottom: 1px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -26,7 +21,6 @@
           </svg>
           <span>Share</span>
         <% end %>
-
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-5 w-5 inline-block relative cursor-pointer"
@@ -59,15 +53,11 @@
         </div>
       </div>
     <% end %>
-
     <%= render "product_info" %>
-
     <div class="max-w-2xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
       <hr>
     </div>
-
     <%= render "reviews" %>
   </div>
 </div>
-
 <%= render "shared/modal", modal_trigger_id: "share-modal-trigger", modal_content: "properties/share_property", content_params: { property: @property } %>
