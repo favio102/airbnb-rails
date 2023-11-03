@@ -20,6 +20,28 @@ module Host
       end
     end
 
+    def update
+      authorize current_user, policy_class: HostPolicy
+      @property = current_user.properties.find(params[:id])
+
+      if @property.update(property_params)
+        redirect_to host_dashboard_path
+      else
+        render :edit
+      end
+    end
+
+    def destroy
+      authorize current_user, policy_class: HostPolicy
+      @property = current_user.properties.find(params[:id])
+
+      if @property.destroy
+        redirect_to host_dashboard_path
+      else
+        render :edit
+      end
+    end
+
     private
 
     def property_params
