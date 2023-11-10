@@ -6,6 +6,7 @@ ruby '3.1.2'
 gem 'bootsnap', require: false
 gem 'country_select', '~> 8.0'
 gem 'devise'
+gem 'faker'
 gem 'geocoder'
 gem 'image_processing', '~> 1.2' # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem 'importmap-rails'
@@ -40,7 +41,7 @@ group :development, :test do
   gem 'debug', platforms: %i[ mri mingw x64_mingw ]
   gem 'dotenv-rails', groups: [:development, :test]
   gem 'factory_bot_rails'
-  gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'main'
+  # gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'main'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 6.0.0'
   gem 'shoulda-matchers', '~> 5.0'
