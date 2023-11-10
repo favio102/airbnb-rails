@@ -1,4 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
+require 'faker'
+
 puts 'Cleaning data base...................'
 Review.destroy_all
 User.destroy_all
