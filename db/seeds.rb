@@ -14,7 +14,7 @@ puts 'Preparing data seeds..........'
 
 puts 'Creating user images'
 user_pictures = []
-6.times do
+5.times do
   user_pictures << URI.parse(Faker::LoremFlickr.image).open
 end
 puts 'User images created!'
@@ -26,7 +26,7 @@ me.profile.picture.attach(io: user_pictures[0], filename: "#{me.full_name}.jpg")
 
 5.times do |i|
   user = User.create(email: Faker::Internet.email, password: "password")
-  user.profile.update(first_name: Faker::Name.first_name,  last_name: Faker::Name.last_name)
+  user.profile.update(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
   user.profile.picture.attach(io: user_pictures[i + 1], filename: "#{user.full_name}.jpg")
 end
 puts 'Users data created!'
